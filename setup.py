@@ -12,7 +12,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='cosmos-python',
 
-    version='1.0.0',
+    version='1.1.0',
 
     description='The Python SDK for CosMoS, the universal cms.',
     long_description=long_description,
@@ -29,11 +29,11 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         'Intended Audience :: Developers',
-        'Topic :: Build Tools',
-        'License :: MIT License',
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
@@ -43,7 +43,9 @@ setup(
     # What does your project relate to?
     keywords='cosmos universal cms',
 
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=["Cosmos", "Cosmos.Exceptions", "Cosmos.Security", "Cosmos.Storage"],
+
+    package_dir = { "Cosmos": "src/Cosmos" },
 
     install_requires=['pycryptodomex'],
 
